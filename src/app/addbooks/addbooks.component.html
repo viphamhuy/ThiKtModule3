@@ -1,0 +1,27 @@
+<div class="row">
+  <div class="col-3" >
+    <button class="btn btn-primary"  routerLink="/book">Quay về</button>
+  </div>
+  <div class="col-6">
+    <div *ngIf="isShow"
+         class="alert {{ (isSuccess) ? 'alert-success' : 'alert-danger' }}"
+         role="alert">
+      {{message}}
+    </div>
+    <form [formGroup]="formGroup" (ngSubmit)="save()">
+      <div class="form-group">
+        <label for="productName">Tên sách</label>
+        <input formControlName="name" type="text" class="form-control" id="productName" aria-describedby="emailHelp">
+      </div>
+      <div class="form-group">
+        <label>Trạng thái</label>
+        <select type="text"  formControlName="read">
+          <option  value="true">Chưa đọc</option>
+        </select>
+      </div>
+      <button type="submit" class="btn btn-primary">
+        Thêm
+      </button>
+    </form>
+    <div class="col-3"></div>
+  </div>

@@ -1,0 +1,14 @@
+<div class="container">
+  <h1>Danh sách đọc</h1>
+  <div><a routerLink="">Về trang chủ</a></div>
+  <table>
+    <tr *ngFor="let b of listBook">
+      <td *ngIf="b.read" class="btn btn-primary" >{{b.name}}</td>
+      <td *ngIf="b.read"><a class="btn btn-danger" (click)="update(b)">Đã đọc</a></td>
+    </tr>
+  </table>
+
+  <a routerLink="/readbook">Danh sách đã đọc</a>
+  <div class="btn btn-success" routerLink="/addbook">Thêm</div>
+</div>
+
